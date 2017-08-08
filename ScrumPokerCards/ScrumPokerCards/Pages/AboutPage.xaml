@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScrumPokerCards.Pages.AboutPage"
+             Title="About">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Padding="10" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <Image Source="icon.png" HeightRequest="100" />
+                    <Label Text="Scrum Poker Cards" HorizontalOptions="Center" TextColor="{StaticResource PrimaryColor}" FontSize="Large"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1">
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Scrum Poker Cards" ForegroundColor="{StaticResource PrimaryColor}"/>
+                                    <Span Text=" is an application that has been developed by " />
+                                    <Span Text="Adrián G. Jorge" ForegroundColor="{StaticResource SecondaryColor}"/>
+                                    <Span Text=" and is available for iOS, Android and Windows." />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="I have to give special thanks to " />
+                                    <Span Text="Juan López García" ForegroundColor="{StaticResource SecondaryColor}"/>
+                                    <Span Text=" and " />
+                                    <Span Text="Novoshore Europe S.L." ForegroundColor="{StaticResource SecondaryColor}"/>
+                                    <Span Text=" for the help provided during the development of the project." />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="The images were designed by " />
+                                    <Span Text="Redbooth" ForegroundColor="{StaticResource SecondaryColor}"/>
+                                    <Span Text=" under license " />
+                                    <Span Text="Creative Commons – Attribution (CC BY 3.0)" FontAttributes="Bold"/>
+                                    <Span Text="." />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Please do not forget to rate the application." />
+                    <Label Text="Enjoy!" />
+                </StackLayout>
+                <Button Grid.Row="2" Text="Close" Command="{Binding CloseCommand}" Margin="0"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

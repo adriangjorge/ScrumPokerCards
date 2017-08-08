@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ScrumPokerCards.App">
+  <Application.Resources>
+        <ResourceDictionary>
+            
+            <!-- Colours -->
+
+            <Color x:Key="PrimaryColor">#00AA8D</Color>
+            <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
+
+            <Color x:Key="SecondaryColor">#FF5722</Color>
+            <Color x:Key="SecondaryTextColor">#FFFFFF</Color>
+
+            <!-- Navigation Pages -->
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="BarTextColor" Value="{StaticResource PrimaryTextColor}" />
+            </Style>
+
+            <!-- Buttons -->
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScrumPokerCards.Pages.MenuPage"
+             Title="Menu">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!-- ContentViews -->
+
+            <Style x:Key="Cell" TargetType="ContentView">
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+            <!-- Labels -->
+
+            <Style x:Key="CellLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource SecondaryColor}" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0" BackgroundColor="{StaticResource PrimaryColor}" Padding="20">
+                    <Image Source="icon.png" HeightRequest="100"/>
+                    <Label Text="Scrum Poker Cards" HorizontalOptions="Center"
+                           TextColor="{StaticResource PrimaryTextColor}"/>
+                </StackLayout>
+                <ContentView Grid.Row="2" Style="{StaticResource Cell}">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToAboutCommand}" />
+                    </ContentView.GestureRecognizers>
+                    <Label Text="About" Style="{StaticResource CellLabel}"/>
+                </ContentView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
