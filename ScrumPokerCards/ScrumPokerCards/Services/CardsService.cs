@@ -12,7 +12,7 @@ namespace ScrumPokerCards.Services
                 new Card() { Title = "1 point", Detail="Low hanging fruit", Image="est1.png", Thumbnail="est1_t.png" },
                 new Card() { Title = "2 points", Detail="Piece of cake", Image="est2.png", Thumbnail="est2_t.png" },
                 new Card() { Title = "3 points", Detail="It ain't rocket science", Image="est3.png", Thumbnail="est3_t.png" },
-                new Card() { Title = "5 points", Detail="Ornitorinco", Image="est5.png", Thumbnail="est5_t.png" },
+                new Card() { Title = "5 points", Detail="Platypus", Image="est5.png", Thumbnail="est5_t.png" },
                 new Card() { Title = "8 points", Detail="An arm and a leg", Image="est8.png", Thumbnail="est8_t.png" },
                 new Card() { Title = "13 points", Detail="Just squeaking by", Image="est13.png", Thumbnail="est13_t.png" },
                 new Card() { Title = "20 points", Detail="Don’t put all your eggs in one basket", Image="est20.png", Thumbnail="est20_t.png" },
