@@ -19,7 +19,7 @@
 
                             <Image Grid.Column="0" Source="{Binding Thumbnail}"/>
                             <StackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
-                                <Label Text="{Binding Title}" TextColor="{StaticResource PrimaryColor}" VerticalOptions="End" FontSize="Large"/>
+                                <Label Text="{Binding Title}" TextColor="{DynamicResource PrimaryColor}" VerticalOptions="End" FontSize="Large"/>
                                 <Label Text="{Binding Detail}" VerticalOptions="Start" FontSize="Small"/>
                             </StackLayout>
                         </Grid>

@@ -1,4 +1,6 @@
 ﻿using FreshMvvm;
+using ScrumPokerCards.Helpers.ThemeManager;
+using ScrumPokerCards.Helpers.ThemeManager.Themes;
 using ScrumPokerCards.PageModels;
 using ScrumPokerCards.Services;
 using Xamarin.Forms;
@@ -14,6 +16,8 @@ namespace ScrumPokerCards
 
             SetupIOC();
             SetMainPage();
+            
+            FreshIOC.Container.Resolve<IThemeManager>().Init();
         }
 
         /* Private Methods */
@@ -34,6 +38,7 @@ namespace ScrumPokerCards
         private void SetupIOC()
         {
             FreshIOC.Container.Register<ICardsService, CardsService>();
+            FreshIOC.Container.Register<IThemeManager, ThemeManager>();
         }
     }
 }

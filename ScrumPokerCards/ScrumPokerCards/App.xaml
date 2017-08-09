@@ -2,27 +2,37 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ScrumPokerCards.App">
   <Application.Resources>
         <ResourceDictionary>
-            
-            <!-- Colours -->
 
-            <Color x:Key="PrimaryColor">#00AA8D</Color>
-            <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
+            <!-- Content Pages -->
 
-            <Color x:Key="SecondaryColor">#FF5722</Color>
-            <Color x:Key="SecondaryTextColor">#FFFFFF</Color>
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
+            </Style>
 
             <!-- Navigation Pages -->
 
-            <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor}" />
-                <Setter Property="BarTextColor" Value="{StaticResource PrimaryTextColor}" />
+            <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
+                <Setter Property="BarBackgroundColor" Value="{DynamicResource PrimaryColor}" />
+                <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}" />
             </Style>
 
             <!-- Buttons -->
 
             <Style TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}" />
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryColor}" />
+                <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}" />
+            </Style>
+
+            <!-- Labels -->
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource TextColor}" />
+            </Style>
+
+            <!-- ListViews -->
+
+            <Style TargetType="ListView">
+                <Setter Property="SeparatorColor" Value="{DynamicResource PrimaryColor}" />
             </Style>
 
         </ResourceDictionary>

@@ -23,6 +23,12 @@ namespace ScrumPokerCards.PageModels
             get { return _goToAboutCommand; }
         }
 
+        private ICommand _goToThemeCommand;
+        public ICommand GoToThemeCommand
+        {
+            get { return _goToThemeCommand; }
+        }
+
         // Overriden methods.
 
         public override void Init(object initData)
@@ -36,12 +42,19 @@ namespace ScrumPokerCards.PageModels
         private void InitializeCommands()
         {
             _goToAboutCommand = new Command(async () => await GoToAboutExecute());
+            _goToThemeCommand = new Command(async () => await GoToThemeExecute());
         }
 
         private async Task GoToAboutExecute()
         {
             HiddenMenu();
             await _coreMethods.PushPageModel<AboutPageModel>(null, true, true);
+        }
+
+        private async Task GoToThemeExecute()
+        {
+            HiddenMenu();
+            await _coreMethods.PushPageModel<ThemePageModel>(null, false, true);
         }
 
         private void HiddenMenu()
