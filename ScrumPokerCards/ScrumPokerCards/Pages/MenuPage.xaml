@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScrumPokerCards.Pages.MenuPage"
-             Title="Menu">
+             Title="Menu" Icon="slideout">
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -35,14 +35,12 @@
                     <Label Text="Scrum Poker Cards" HorizontalOptions="Center"
                            TextColor="{DynamicResource PrimaryTextColor}"/>
                 </StackLayout>
-                <StackLayout Grid.Row="1">
-                    <ContentView Style="{StaticResource Cell}">
-                        <ContentView.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding GoToThemeCommand}" />
-                        </ContentView.GestureRecognizers>
-                        <Label Text="Color Theme" Style="{DynamicResource CellLabel}"/>
-                    </ContentView>
-                </StackLayout>
+                <ContentView Grid.Row="1" Style="{StaticResource Cell}" VerticalOptions="Start">
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToThemeCommand}" />
+                    </ContentView.GestureRecognizers>
+                    <Label Text="Color Theme" Style="{DynamicResource CellLabel}"/>
+                </ContentView>
                 <ContentView Grid.Row="2" Style="{StaticResource Cell}">
                     <ContentView.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding GoToAboutCommand}" />

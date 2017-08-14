@@ -1,29 +1,33 @@
 ﻿using ScrumPokerCards.Helpers.ThemeManager.Themes;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace ScrumPokerCards.Helpers.ThemeManager
 {
     public class ThemeManager : IThemeManager
     {
-        private const string DEFAULT_KEY = "default";
+        /* Private Attributes */
+
+        private Theme _currentTheme;
+        private Theme _defaultTheme;
+
+        private readonly IThemePlatform _themePlatform;
+
+        /* Constuctors */
 
         public ThemeManager()
         {
+            _themePlatform = DependencyService.Get<IThemePlatform>();
+            _defaultTheme = new DefaultTheme("default");
             CreateThemeList();
         }
 
         /* Properties */
-
-        private Theme _currentTheme;
+        
         public Theme CurrentTheme
         {
             get { return _currentTheme; }
-            set
-            {
-                _currentTheme = value;
-                ApplyTheme(value);
-                LocalSettings.Theme = value.ThemeKey;
-            }
+            set { SetCurrentTheme(value); }
         }
 
         public IList<Theme> ThemeList
@@ -31,10 +35,14 @@ namespace ScrumPokerCards.Helpers.ThemeManager
             get; private set;
         }
 
+        /* Public Methods */
+
         public void Init()
         {
-            var key = LocalSettings.Theme ?? DEFAULT_KEY;
+            var key = LocalSettings.Theme;
             var theme = (ThemeList as List<Theme>).Find(x => x.ThemeKey == key);
+            if(theme == null)
+                theme = _defaultTheme;
             _currentTheme = theme;
             ApplyTheme(theme);
         }
@@ -54,14 +62,29 @@ namespace ScrumPokerCards.Helpers.ThemeManager
 
             resources["SecondaryColor"] = theme.SecondaryColor;
             resources["SecondaryTextColor"] = theme.SecondaryTextColor;
+
+            _themePlatform.setTheme(theme);
+        }
+
+        private void SetCurrentTheme(Theme theme)
+        {
+            _currentTheme = theme;
+            ApplyTheme(theme);
+            LocalSettings.Theme = theme.ThemeKey;
         }
 
         private void CreateThemeList()
         {
             ThemeList = new List<Theme> ()
             {
-                new DefaultTheme(DEFAULT_KEY),
-                new DarkTheme("dark")
+                _defaultTheme,
+                new DarkTheme("dark"),
+                new TestTheme("test"),
+                new DefaultTheme("orage", "Orange Theme")
+                {
+                    PrimaryColor = Color.FromHex("FF5722"),
+                    SecondaryColor = Color.FromHex("2196F3")
+                }
             };
         }
 

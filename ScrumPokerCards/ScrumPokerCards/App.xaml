@@ -9,13 +9,6 @@
                 <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
             </Style>
 
-            <!-- Navigation Pages -->
-
-            <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
-                <Setter Property="BarBackgroundColor" Value="{DynamicResource PrimaryColor}" />
-                <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}" />
-            </Style>
-
             <!-- Buttons -->
 
             <Style TargetType="Button">
@@ -32,7 +25,15 @@
             <!-- ListViews -->
 
             <Style TargetType="ListView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
                 <Setter Property="SeparatorColor" Value="{DynamicResource PrimaryColor}" />
+            </Style>
+
+            <!-- Navigation Pages -->
+
+            <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
+                <Setter Property="BarBackgroundColor" Value="{DynamicResource PrimaryColor}" />
+                <Setter Property="BarTextColor" Value="{DynamicResource PrimaryTextColor}" />
             </Style>
 
         </ResourceDictionary>

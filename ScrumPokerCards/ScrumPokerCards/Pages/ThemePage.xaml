@@ -4,10 +4,10 @@
              x:Class="ScrumPokerCards.Pages.ThemePage"
              Title="Themes">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding ThemeList}" SelectedItem="{Binding SelectedTheme}" >
+        <ListView ItemsSource="{Binding ThemeList}" SelectedItem="{Binding SelectedTheme}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding ThemeName}" />
+                    <TextCell Text="{Binding ThemeName}" TextColor="{DynamicResource TextColor}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

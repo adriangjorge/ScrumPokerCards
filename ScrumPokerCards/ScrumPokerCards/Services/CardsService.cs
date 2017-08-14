@@ -5,7 +5,7 @@ namespace ScrumPokerCards.Services
 {
     public class CardsService : ICardsService
     {
-        public List<Card> get()
+        public IList<Card> get()
         {
             return new List<Card>()
             {

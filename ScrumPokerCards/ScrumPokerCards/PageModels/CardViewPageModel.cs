@@ -10,9 +10,12 @@ namespace ScrumPokerCards.PageModels
 {
     public class CardViewPageModel : FreshBasePageModel
     {
+        /* Private Attributes */
+        
+        private Card _card;
+
         /* Properties */
 
-        private Card _card;
         public Card Card
         {
             get { return _card; }

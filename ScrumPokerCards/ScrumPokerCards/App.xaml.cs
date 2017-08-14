@@ -1,6 +1,5 @@
 ﻿using FreshMvvm;
 using ScrumPokerCards.Helpers.ThemeManager;
-using ScrumPokerCards.Helpers.ThemeManager.Themes;
 using ScrumPokerCards.PageModels;
 using ScrumPokerCards.Services;
 using Xamarin.Forms;
@@ -9,6 +8,7 @@ namespace ScrumPokerCards
 {
     public partial class App : Application
     {
+        /* Constructors */
 
         public App()
         {
@@ -24,12 +24,14 @@ namespace ScrumPokerCards
 
         private void SetMainPage()
         {
-            var detail = FreshPageModelResolver.ResolvePageModel<CardsListPageModel>();
-            var master = FreshPageModelResolver.ResolvePageModel<MenuPageModel>(detail.GetModel().CoreMethods);
+            var cardsListPage = FreshPageModelResolver.ResolvePageModel<CardsListPageModel>();
+            var cardsListPageNav = new FreshNavigationContainer(cardsListPage);
+
+            var master = FreshPageModelResolver.ResolvePageModel<MenuPageModel>(cardsListPage.GetModel().CoreMethods);
 
             MainPage = new MasterDetailPage()
             {
-                Detail = new FreshNavigationContainer(detail),
+                Detail = cardsListPageNav,
                 Master = master,
                 MasterBehavior = MasterBehavior.Popover
             };

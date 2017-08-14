@@ -40,9 +40,11 @@
     </Compile>
     <Compile Include="Helpers\LocalSettings.cs" />
     <Compile Include="Helpers\ThemeManager\IThemeManager.cs" />
+    <Compile Include="Helpers\ThemeManager\IThemePlatform.cs" />
     <Compile Include="Helpers\ThemeManager\Theme.cs" />
     <Compile Include="Helpers\ThemeManager\ThemeManager.cs" />
     <Compile Include="Helpers\ThemeManager\Themes\DarkTheme.cs" />
+    <Compile Include="Helpers\ThemeManager\Themes\TestTheme.cs" />
     <Compile Include="Helpers\ThemeManager\Themes\DefaultTheme.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="PageModels\AboutPageModel.cs" />

@@ -6,6 +6,6 @@ namespace ScrumPokerCards.Services
 {
     public interface ICardsService
     {
-        List<Card> get();
+        IList<Card> get();
     }
 }

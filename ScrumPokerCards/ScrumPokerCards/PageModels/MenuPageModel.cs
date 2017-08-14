@@ -7,29 +7,33 @@ namespace ScrumPokerCards.PageModels
 {
     public class MenuPageModel : FreshBasePageModel
     {
+        /* Private Attributes */
 
         private IPageModelCoreMethods _coreMethods;
+
+        private ICommand _goToAboutCommand;
+        private ICommand _goToThemeCommand;
+
+        /* Constructors */
 
         public MenuPageModel()
         {
             InitializeCommands();
         }
 
-        // Commands.
-
-        private ICommand _goToAboutCommand;
+        /* Properties */
+        
         public ICommand GoToAboutCommand
         {
             get { return _goToAboutCommand; }
         }
-
-        private ICommand _goToThemeCommand;
+        
         public ICommand GoToThemeCommand
         {
             get { return _goToThemeCommand; }
         }
 
-        // Overriden methods.
+        /* Overriden methods */
 
         public override void Init(object initData)
         {

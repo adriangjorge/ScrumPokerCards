@@ -7,14 +7,19 @@ namespace ScrumPokerCards.PageModels
 {
     public class AboutPageModel : FreshBasePageModel
     {
+        /* Private Attributes */
+
+        private ICommand _closeCommand;
+
+        /* Contructors */
+
         public AboutPageModel()
         {
             InitializeCommands();
         }
 
-        /* Commands */
+        /* Properties */
 
-        private ICommand _closeCommand;
         public ICommand CloseCommand
         {
             get { return _closeCommand; }

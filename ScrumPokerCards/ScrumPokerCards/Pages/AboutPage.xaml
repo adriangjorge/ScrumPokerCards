@@ -3,15 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScrumPokerCards.Pages.AboutPage"
              Title="About">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!-- Labels -->
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
-            <Grid Padding="10" RowSpacing="20">
+            <Grid Padding="10" RowSpacing="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <StackLayout Grid.Row="0">
+                <StackLayout Grid.Row="0" Margin="10">
                     <Image Source="icon.png" HeightRequest="100" />
                     <Label Text="Scrum Poker Cards" HorizontalOptions="Center" TextColor="{StaticResource PrimaryColor}" FontSize="Large"/>
                 </StackLayout>
@@ -48,7 +59,7 @@
                                     <Span Text="The images were designed by " />
                                     <Span Text="Redbooth" ForegroundColor="{StaticResource SecondaryColor}"/>
                                     <Span Text=" under license " />
-                                    <Span Text="Creative Commons – Attribution (CC BY 3.0)" FontAttributes="Bold"/>
+                                    <Span Text="Creative Commons – Attribution (CC BY 3.0)" />
                                     <Span Text="." />
                                 </FormattedString.Spans>
                             </FormattedString>

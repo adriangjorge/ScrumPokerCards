@@ -7,11 +7,13 @@ namespace ScrumPokerCards.PageModels
 {
     public class ThemePageModel : FreshBasePageModel
     {
-        /* Services. */
+        /* Private Attributes */
 
         private readonly IThemeManager _themeManager;
 
-        /* Constructor */
+        private IList<Theme> _themeList;
+
+        /* Constructors */
 
         public ThemePageModel()
         {
@@ -22,7 +24,6 @@ namespace ScrumPokerCards.PageModels
 
         /* Properties */
 
-        private IList<Theme> _themeList;
         public IList<Theme> ThemeList
         {
             get { return _themeList; }
@@ -31,13 +32,17 @@ namespace ScrumPokerCards.PageModels
         public Theme SelectedTheme
         {
             get { return _themeManager.CurrentTheme; }
-            set
+            set { SetSelectedTheme(value); }
+        }
+
+        /* Private Methods */
+
+        private void SetSelectedTheme(Theme theme)
+        {
+            if (theme != null)
             {
-                if(value != null)
-                {
-                    CoreMethods.PopPageModel(false, true);
-                    _themeManager.CurrentTheme = value;
-                }
+                CoreMethods.PopPageModel(false, true);
+                _themeManager.CurrentTheme = theme;
             }
         }
     }
