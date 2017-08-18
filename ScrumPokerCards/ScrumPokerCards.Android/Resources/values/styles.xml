@@ -12,7 +12,7 @@
 		<!-- colorPrimary is used for the default action bar background --> <!-- FF5722 , 00AA8D -->
 		<item name="colorPrimary">#00AA8D</item>
 		<!-- colorPrimaryDark is used for the status bar -->
-		<item name="colorPrimaryDark">#00AA8D</item>
+		<item name="colorPrimaryDark">#424242</item>
 		<!-- colorAccent is used as the default value for colorControlActivated which is used to tint widgets -->
 		<item name="colorAccent">#008975</item>
 		<!-- You can also set colorControlNormal, colorControlActivated, colorControlHighlight and colorSwitchThumbNormal. -->

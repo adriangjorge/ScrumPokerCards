@@ -18,7 +18,7 @@ namespace ScrumPokerCards.Helpers.ThemeManager
         public ThemeManager()
         {
             _themePlatform = DependencyService.Get<IThemePlatform>();
-            _defaultTheme = new DefaultTheme("default");
+            _defaultTheme = new DefaultTheme("default", "Teal Light");
             CreateThemeList();
         }
 
@@ -78,12 +78,36 @@ namespace ScrumPokerCards.Helpers.ThemeManager
             ThemeList = new List<Theme> ()
             {
                 _defaultTheme,
-                new DarkTheme("dark"),
-                new TestTheme("test"),
-                new DefaultTheme("orage", "Orange Theme")
+                new DarkTheme("dark", "Teal Dark"),
+                new DefaultTheme("orage", "Orange Light")
                 {
                     PrimaryColor = Color.FromHex("FF5722"),
                     SecondaryColor = Color.FromHex("2196F3")
+                },
+                new DarkTheme("orage-dark", "Orange Dark")
+                {
+                    PrimaryColor = Color.FromHex("FF5722"),
+                    SecondaryColor = Color.FromHex("2196F3")
+                },
+                new DefaultTheme("blue", "Blue Light")
+                {
+                    PrimaryColor = Color.FromHex("2196F3"),
+                    SecondaryColor = Color.FromHex("FF5722")
+                },
+                new DarkTheme("blue-dark", "Blue Dark")
+                {
+                    PrimaryColor = Color.FromHex("2196F3"),
+                    SecondaryColor = Color.FromHex("FF5722")
+                },
+                new DefaultTheme("purple", "Purple Light")
+                {
+                    PrimaryColor = Color.FromHex("673AB7"),
+                    SecondaryColor = Color.FromHex("E91E63")
+                },
+                new DarkTheme("purple-dark", "Purple Dark")
+                {
+                    PrimaryColor = Color.FromHex("E040FB"),
+                    SecondaryColor = Color.FromHex("E91E63")
                 }
             };
         }
