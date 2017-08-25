@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ScrumPokerCards.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ThemePage : ContentPage
+    public partial class CardsGridPage : ContentPage
     {
-        public ThemePage()
+        public CardsGridPage()
         {
             InitializeComponent();
         }

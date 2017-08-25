@@ -34,7 +34,7 @@
                                     <Span Text="Scrum Poker Cards" ForegroundColor="{StaticResource PrimaryColor}"/>
                                     <Span Text=" is an application that has been developed by " />
                                     <Span Text="Adrián G. Jorge" ForegroundColor="{StaticResource SecondaryColor}"/>
-                                    <Span Text=" and is available for iOS, Android and Windows." />
+                                    <Span Text=" and is available for iOS and Android." />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>

@@ -39,20 +39,28 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\LocalSettings.cs" />
+    <Compile Include="Helpers\ThemeManager\BaseThemes\BaseTheme.cs" />
+    <Compile Include="Helpers\ThemeManager\BaseThemes\DarkBaseTheme.cs" />
+    <Compile Include="Helpers\ThemeManager\BaseThemes\LightBaseTheme.cs" />
+    <Compile Include="Helpers\ThemeManager\ColorThemes\ColorTheme.cs" />
+    <Compile Include="Helpers\ThemeManager\ColorThemes\TealColorTheme.cs" />
     <Compile Include="Helpers\ThemeManager\IThemeManager.cs" />
     <Compile Include="Helpers\ThemeManager\IThemePlatform.cs" />
     <Compile Include="Helpers\ThemeManager\Theme.cs" />
     <Compile Include="Helpers\ThemeManager\ThemeManager.cs" />
-    <Compile Include="Helpers\ThemeManager\Themes\DarkTheme.cs" />
-    <Compile Include="Helpers\ThemeManager\Themes\DefaultTheme.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="PageModels\AboutPageModel.cs" />
+    <Compile Include="PageModels\CardsGridPageModel.cs" />
     <Compile Include="PageModels\CardViewPageModel.cs" />
     <Compile Include="PageModels\CardsListPageModel.cs" />
     <Compile Include="PageModels\MenuPageModel.cs" />
-    <Compile Include="PageModels\ThemePageModel.cs" />
+    <Compile Include="PageModels\SettingsPageModel.cs" />
+    <Compile Include="PageModels\ColorThemePageModel.cs" />
     <Compile Include="Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CardsGridPage.xaml.cs">
+      <DependentUpon>CardsGridPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CardViewPage.xaml.cs">
       <DependentUpon>CardViewPage.xaml</DependentUpon>
@@ -63,8 +71,11 @@
     <Compile Include="Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ThemePage.xaml.cs">
-      <DependentUpon>ThemePage.xaml</DependentUpon>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ColorThemePage.xaml.cs">
+      <DependentUpon>ColorThemePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CardsService.cs" />
@@ -110,7 +121,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\ThemePage.xaml">
+    <EmbeddedResource Include="Pages\ColorThemePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -138,6 +149,21 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\CardsGridPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

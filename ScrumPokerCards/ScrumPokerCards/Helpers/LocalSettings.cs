@@ -10,12 +10,23 @@ namespace ScrumPokerCards.Helpers
 			get { return CrossSettings.Current; }
 		}
 
-		private const string ThemeKey = "theme_key";
-		public static string Theme
-		{
-			get { return AppSettings.GetValueOrDefault(ThemeKey, null); }
-			set { AppSettings.AddOrUpdateValue(ThemeKey, value); }
-		}
+		private const string BaseThemeKey = "base_theme";
+        private const string ColorThemeKey = "color_theme";
+        
+        public static class Theme
+        {
+            public static string Base
+            {
+                get { return AppSettings.GetValueOrDefault(BaseThemeKey, null); }
+                set { AppSettings.AddOrUpdateValue(BaseThemeKey, value); }
+            }
+            
+            public static string Color
+            {
+                get { return AppSettings.GetValueOrDefault(ColorThemeKey, null); }
+                set { AppSettings.AddOrUpdateValue(ColorThemeKey, value); }
+            }
+        }
 
-	}
+    }
 }

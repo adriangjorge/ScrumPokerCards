@@ -2,21 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ScrumPokerCards.Pages.CardsListPage"
-             Title="Scrum Poker Cards"
-             IsBusy="{Binding IsBusy}">
+             Title="Scrum Poker Cards">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Cards}" SelectedItem="{Binding SelectedCard, Mode=TwoWay}" RowHeight="70" SeparatorVisibility="None">
+        <ListView ItemsSource="{Binding Cards}" SelectedItem="{Binding SelectedCard, Mode=TwoWay}" RowHeight="70" SeparatorVisibility="None" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Margin="0,0,0,2"  Padding="12" ColumnSpacing="14" BackgroundColor="{DynamicResource ForegroundColor}">
+                        <Grid Margin="1" Padding="12" ColumnSpacing="14" BackgroundColor="{DynamicResource ForegroundColor}" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
 
                             <Image Grid.Column="0" Source="{Binding Thumbnail}"/>
                             <StackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">

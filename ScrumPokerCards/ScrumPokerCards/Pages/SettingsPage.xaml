@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScrumPokerCards.Pages.SettingsPage"
+             Title="Settings">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!-- Grids -->
+            <Style TargetType="Grid" x:Key="SettingsGrid">
+                <Setter Property="Padding" Value="8" />
+                <Setter Property="RowSpacing" Value="10" />
+            </Style>
+
+            <!-- Labels -->
+            <Style TargetType="Label" x:Key="TitleSettingsLabel">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Margin" Value="0,6,0,4" />
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style TargetType="Label" x:Key="ItemSettingsLabel">
+                <Setter Property="FontSize" Value="Default" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="Margin" Value="14,0,0,0" />
+                <Setter Property="TextColor" Value="{DynamicResource TextColor}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style TargetType="Label" x:Key="ValueSettingsLabel">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="TextColor" Value="{DynamicResource TextColor}" />
+                <Setter Property="VerticalOptions" Value="End" />
+            </Style>
+            <Style TargetType="Label" x:Key="ActionValueSettingsLabel" BaseResourceKey="ValueSettingsLabel" >
+                <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Style="{DynamicResource SettingsGrid}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.ColumnSpan="2" Text="Theme" Style="{DynamicResource TitleSettingsLabel}" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Dark Theme" Style="{DynamicResource ItemSettingsLabel}"/>
+                <Switch Grid.Row="1" Grid.Column="1" IsToggled="{Binding IsDarkBaseTheme}" />
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Color" Style="{DynamicResource ItemSettingsLabel}" />
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding CurrentColorTheme}" Style="{DynamicResource ActionValueSettingsLabel}" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GotoColorThemeCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label Grid.Row="3" Grid.ColumnSpan="2" Text="Others" Style="{DynamicResource TitleSettingsLabel}" />
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Language" Style="{DynamicResource ItemSettingsLabel}" />
+                <Label Grid.Row="4" Grid.Column="1" Text="English" Style="{DynamicResource ValueSettingsLabel}" />
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

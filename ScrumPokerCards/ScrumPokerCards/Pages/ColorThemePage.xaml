@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ScrumPokerCards.Pages.ThemePage"
-             Title="Themes">
+             x:Class="ScrumPokerCards.Pages.ColorThemePage"
+             Title="Color Themes">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding ThemeList}" SelectedItem="{Binding SelectedTheme}">
+        <ListView ItemsSource="{Binding ColorThemeList}" SelectedItem="{Binding SelectedTheme}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding ThemeName}" TextColor="{DynamicResource TextColor}"/>

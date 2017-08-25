@@ -3,7 +3,6 @@ using ScrumPokerCards.Models;
 using ScrumPokerCards.Services;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace ScrumPokerCards.PageModels
 {
@@ -15,7 +14,6 @@ namespace ScrumPokerCards.PageModels
         private readonly ICardsService _cardsService;
 
         private IList<Card> _cards;
-        private Boolean _isBusy;
 
         /* Constructors */
 
@@ -24,7 +22,6 @@ namespace ScrumPokerCards.PageModels
             _cardsService = FreshIOC.Container.Resolve<ICardsService>();
             
             _cards = _cardsService.get();
-            IsBusy = true;
         }
 
         /* Properties */
@@ -32,16 +29,6 @@ namespace ScrumPokerCards.PageModels
         public IList<Card> Cards
         {
             get { return _cards; }
-        }
-
-        public Boolean IsBusy
-        {
-            get { return _isBusy; }
-            set
-            {
-                _isBusy = value;
-                RaisePropertyChanged("IsBusy");
-            }
         }
 
         public Card SelectedCard
@@ -55,17 +42,10 @@ namespace ScrumPokerCards.PageModels
 
         /* Override Methods */
 
-        protected override void ViewIsAppearing(object sender, EventArgs e)
-        {
-            base.ViewIsAppearing(sender, e);
-            IsBusy = false;
-        }
-
         protected override void ViewIsDisappearing(object sender, EventArgs e)
         {
-            IsBusy = true;
             base.ViewIsDisappearing(sender, e);
-            RaisePropertyChanged("SelectedCard");
+            RaisePropertyChanged(nameof(SelectedCard));
         }
     }
 }

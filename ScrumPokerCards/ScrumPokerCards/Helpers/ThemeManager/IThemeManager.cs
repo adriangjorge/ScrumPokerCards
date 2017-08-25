@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using ScrumPokerCards.Helpers.ThemeManager.BaseThemes;
+using ScrumPokerCards.Helpers.ThemeManager.ColorThemes;
+using System.Collections.Generic;
 
 namespace ScrumPokerCards.Helpers.ThemeManager
 {
@@ -6,9 +8,11 @@ namespace ScrumPokerCards.Helpers.ThemeManager
     {
         /* Properties */
 
-        Theme CurrentTheme { get; set; }
+        BaseTheme CurrentBaseTheme { get; set; }
+        ColorTheme CurrentColorTheme { get; set; }
 
-        IList<Theme> ThemeList { get; }
+        IList<BaseTheme> BaseThemesList { get; }
+        IList<ColorTheme> ColorThemesList { get; }
 
         /* Methods */
 

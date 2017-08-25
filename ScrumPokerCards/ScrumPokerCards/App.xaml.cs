@@ -16,31 +16,33 @@ namespace ScrumPokerCards
 
             SetupIOC();
             SetMainPage();
-            
-            FreshIOC.Container.Resolve<IThemeManager>().Init();
         }
 
         /* Private Methods */
 
         private void SetMainPage()
         {
-            var cardsListPage = FreshPageModelResolver.ResolvePageModel<CardsListPageModel>();
-            var cardsListPageNav = new FreshNavigationContainer(cardsListPage);
+            var detailPage = FreshPageModelResolver.ResolvePageModel<CardsListPageModel>();
+            var detailPageNav = new FreshNavigationContainer(detailPage);
 
-            var master = FreshPageModelResolver.ResolvePageModel<MenuPageModel>(cardsListPage.GetModel().CoreMethods);
+            var masterPage = FreshPageModelResolver.ResolvePageModel<MenuPageModel>(detailPage.GetModel().CoreMethods);
 
             MainPage = new MasterDetailPage()
             {
-                Detail = cardsListPageNav,
-                Master = master,
+                Detail = detailPageNav,
+                Master = masterPage,
                 MasterBehavior = MasterBehavior.Popover
             };
         }
 
         private void SetupIOC()
         {
+            // Def
             FreshIOC.Container.Register<ICardsService, CardsService>();
             FreshIOC.Container.Register<IThemeManager, ThemeManager>();
+
+            // Conf
+            FreshIOC.Container.Resolve<IThemeManager>().Init();
         }
     }
 }

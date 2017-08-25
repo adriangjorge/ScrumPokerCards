@@ -6,16 +6,15 @@
     <ContentPage.Resources>
         <ResourceDictionary>
 
-            <!-- ContentViews -->
-
-            <Style x:Key="Cell" TargetType="ContentView">
-                <Setter Property="Padding" Value="20" />
+            <!-- Content Views -->
+            <Style TargetType="ContentView" x:Key="CellContentview">
                 <Setter Property="BackgroundColor" Value="{DynamicResource ForegroundColor}" />
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="VerticalOptions" Value="Start" />
             </Style>
 
             <!-- Labels -->
-
-            <Style x:Key="CellLabel" TargetType="Label">
+            <Style TargetType="Label" x:Key="CellLabel">
                 <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
             </Style>
 
@@ -35,15 +34,15 @@
                     <Label Text="Scrum Poker Cards" HorizontalOptions="Center"
                            TextColor="{DynamicResource PrimaryTextColor}"/>
                 </StackLayout>
-                <ContentView Grid.Row="1" Style="{StaticResource Cell}" VerticalOptions="Start">
+                <ContentView Grid.Row="1" Style="{StaticResource CellContentview}" >
                     <ContentView.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding GoToThemeCommand}" />
+                        <TapGestureRecognizer Command="{Binding GotoSettingsCommand}" />
                     </ContentView.GestureRecognizers>
-                    <Label Text="Color Theme" Style="{DynamicResource CellLabel}"/>
+                    <Label Text="Settings" Style="{DynamicResource CellLabel}"/>
                 </ContentView>
-                <ContentView Grid.Row="2" Style="{StaticResource Cell}">
+                <ContentView Grid.Row="2" Style="{StaticResource CellContentview}">
                     <ContentView.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding GoToAboutCommand}" />
+                        <TapGestureRecognizer Command="{Binding GotoAboutCommand}" />
                     </ContentView.GestureRecognizers>
                     <Label Text="About" Style="{DynamicResource CellLabel}"/>
                 </ContentView>

@@ -11,8 +11,8 @@ namespace ScrumPokerCards.PageModels
 
         private IPageModelCoreMethods _coreMethods;
 
-        private ICommand _goToAboutCommand;
-        private ICommand _goToThemeCommand;
+        private ICommand _gotoAboutCommand;
+        private ICommand _gotoSettingsCommand;
 
         /* Constructors */
 
@@ -23,14 +23,14 @@ namespace ScrumPokerCards.PageModels
 
         /* Properties */
         
-        public ICommand GoToAboutCommand
+        public ICommand GotoAboutCommand
         {
-            get { return _goToAboutCommand; }
+            get { return _gotoAboutCommand; }
         }
         
-        public ICommand GoToThemeCommand
+        public ICommand GotoSettingsCommand
         {
-            get { return _goToThemeCommand; }
+            get { return _gotoSettingsCommand; }
         }
 
         /* Overriden methods */
@@ -45,20 +45,20 @@ namespace ScrumPokerCards.PageModels
 
         private void InitializeCommands()
         {
-            _goToAboutCommand = new Command(async () => await GoToAboutExecute());
-            _goToThemeCommand = new Command(async () => await GoToThemeExecute());
+            _gotoAboutCommand = new Command(async () => await GotoAboutExecute());
+            _gotoSettingsCommand = new Command(async () => await GotoSettingsExecute());
         }
 
-        private async Task GoToAboutExecute()
+        private async Task GotoAboutExecute()
         {
             HiddenMenu();
-            await _coreMethods.PushPageModel<AboutPageModel>(null, true, true);
+            await _coreMethods.PushPageModel<AboutPageModel>(null, true);
         }
 
-        private async Task GoToThemeExecute()
+        private async Task GotoSettingsExecute()
         {
             HiddenMenu();
-            await _coreMethods.PushPageModel<ThemePageModel>(null, false, true);
+            await _coreMethods.PushPageModel<SettingsPageModel>(null);
         }
 
         private void HiddenMenu()
