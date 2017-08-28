@@ -42,15 +42,14 @@
     <Compile Include="Helpers\ThemeManager\BaseThemes\BaseTheme.cs" />
     <Compile Include="Helpers\ThemeManager\BaseThemes\DarkBaseTheme.cs" />
     <Compile Include="Helpers\ThemeManager\BaseThemes\LightBaseTheme.cs" />
-    <Compile Include="Helpers\ThemeManager\ColorThemes\ColorTheme.cs" />
-    <Compile Include="Helpers\ThemeManager\ColorThemes\TealColorTheme.cs" />
+    <Compile Include="Helpers\ThemeManager\ColorPalette.cs" />
+    <Compile Include="Helpers\ThemeManager\ColorTheme.cs" />
     <Compile Include="Helpers\ThemeManager\IThemeManager.cs" />
     <Compile Include="Helpers\ThemeManager\IThemePlatform.cs" />
     <Compile Include="Helpers\ThemeManager\Theme.cs" />
     <Compile Include="Helpers\ThemeManager\ThemeManager.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="PageModels\AboutPageModel.cs" />
-    <Compile Include="PageModels\CardsGridPageModel.cs" />
     <Compile Include="PageModels\CardViewPageModel.cs" />
     <Compile Include="PageModels\CardsListPageModel.cs" />
     <Compile Include="PageModels\MenuPageModel.cs" />
@@ -58,9 +57,6 @@
     <Compile Include="PageModels\ColorThemePageModel.cs" />
     <Compile Include="Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\CardsGridPage.xaml.cs">
-      <DependentUpon>CardsGridPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CardViewPage.xaml.cs">
       <DependentUpon>CardViewPage.xaml</DependentUpon>
@@ -146,12 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\AboutPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\CardsGridPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

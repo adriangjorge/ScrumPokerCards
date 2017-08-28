@@ -1,5 +1,4 @@
 ﻿using ScrumPokerCards.Helpers.ThemeManager.BaseThemes;
-using ScrumPokerCards.Helpers.ThemeManager.ColorThemes;
 using System.Collections.Generic;
 
 namespace ScrumPokerCards.Helpers.ThemeManager

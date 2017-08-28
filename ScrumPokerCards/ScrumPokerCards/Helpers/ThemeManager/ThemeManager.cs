@@ -1,5 +1,4 @@
 ﻿using ScrumPokerCards.Helpers.ThemeManager.BaseThemes;
-using ScrumPokerCards.Helpers.ThemeManager.ColorThemes;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
@@ -65,7 +64,6 @@ namespace ScrumPokerCards.Helpers.ThemeManager
         {
             _currentBaseTheme = baseTheme;
             UpdateResources();
-
             LocalSettings.Theme.Base = baseTheme.ThemeKey;
         }
 
@@ -73,7 +71,6 @@ namespace ScrumPokerCards.Helpers.ThemeManager
         {
             _currentColorTheme = colorTheme;
             UpdateResources();
-            
             LocalSettings.Theme.Color = colorTheme.ThemeKey;
         }
 
@@ -119,46 +116,31 @@ namespace ScrumPokerCards.Helpers.ThemeManager
 
             _colorThemesList = new List<ColorTheme>()
             {
-                new TealColorTheme(),
-                new ColorTheme("blue-deeporange", "Blue and Deep Orange")
+                new ColorTheme("teal-deeporange", "Default", ColorPalette.Teal, ColorPalette.DeepOrange),
+                new ColorTheme("black-cyan", "Black and Cyan", Color.FromHex("101010"), ColorPalette.Cyan),
+                new ColorTheme("blue", "Blue", ColorPalette.Blue_A700, ColorPalette.Blue_A400),
+                new ColorTheme("blue-deeporange", "Blue and Deep Orange", ColorPalette.Blue, ColorPalette.DeepOrange),
+                new ColorTheme("blue-pink", "Blue and Pink", ColorPalette.Blue, ColorPalette.Pink),
+                new ColorTheme("brown-yellow+1", "Brown and Yellow", ColorPalette.Brown, ColorPalette.Yellow_600)
                 {
-                    PrimaryColor = Color.FromHex("2196F3"), PrimaryTextColor = Color.FromHex("FFFFFF"),
-                    SecondaryColor = Color.FromHex("FF5722"), SecondaryTextColor = Color.FromHex("FFFFFF")
+                    SecondaryTextColor = Color.FromHex("101010")
                 },
-                new ColorTheme("blue-pink", "Blue and Pink")
+                new ColorTheme("deeporange-blue", "Deep Orange and Blue", ColorPalette.DeepOrange, ColorPalette.Blue),
+                new ColorTheme("deeporange-teal", "Deep Orange and Teal", ColorPalette.DeepOrange, ColorPalette.Teal),
+                new ColorTheme("green-orange", "Green and Orange", ColorPalette.Green, ColorPalette.Orange),
+                new ColorTheme("indigo", "Indigo", ColorPalette.Indigo_700, ColorPalette.Indigo),
+                new ColorTheme("indigo-yellow+1", "Indigo and Yellow", ColorPalette.Indigo, ColorPalette.Yellow_600),
+                new ColorTheme("pink-purple", "Pink and Purple", ColorPalette.Pink, ColorPalette.Purple),
+                new ColorTheme("purple-pink", "Purple and Pink", ColorPalette.Purple, ColorPalette.Pink),
+                new ColorTheme("red", "Red", ColorPalette.Red, ColorPalette.Red),
+                new ColorTheme("teal-red", "Teal and Red", ColorPalette.Teal, ColorPalette.Red),
+                new ColorTheme("yellow+1-brown", "Yellow and Brown", ColorPalette.Yellow_600, ColorPalette.Brown)
                 {
-                    PrimaryColor = Color.FromHex("2196F3"), PrimaryTextColor = Color.FromHex("FFFFFF"),
-                    SecondaryColor = Color.FromHex("E91E63"), SecondaryTextColor = Color.FromHex("FFFFFF")
+                    PrimaryTextColor = Color.FromHex("101010")
                 },
-                new ColorTheme("deeporange-blue", "Deep Orange and Blue")
+                new ColorTheme("yellow+1-cyan", "Yellow and Cyan", ColorPalette.Yellow_600, ColorPalette.Cyan)
                 {
-                    PrimaryColor = Color.FromHex("FF5722"), PrimaryTextColor = Color.FromHex("FFFFFF"),
-                    SecondaryColor = Color.FromHex("2196F3"), SecondaryTextColor = Color.FromHex("FFFFFF")
-                },
-                new ColorTheme("green-orange", "Green and Orange")
-                {
-                    PrimaryColor = Color.FromHex("4CAF50"), PrimaryTextColor = Color.FromHex("FFFFFF"),
-                    SecondaryColor = Color.FromHex("FF9800"), SecondaryTextColor = Color.FromHex("FFFFFF")
-                },
-                new ColorTheme("purple-pink", "Purple and Pink")
-                {
-                    PrimaryColor = Color.FromHex("9C27B0"), PrimaryTextColor = Color.FromHex("FFFFFF"),
-                    SecondaryColor = Color.FromHex("E91E63"), SecondaryTextColor = Color.FromHex("FFFFFF")
-                },
-                new ColorTheme("red", "Red")
-                {
-                    PrimaryColor = Color.FromHex("F44336"), PrimaryTextColor = Color.FromHex("FFFFFF"),
-                    SecondaryColor = Color.FromHex("F44336"), SecondaryTextColor = Color.FromHex("FFFFFF")
-                },
-                new ColorTheme("yellow+1-brown", "Yellow and Brown")
-                {
-                    PrimaryColor = Color.FromHex("FDD835"), PrimaryTextColor = Color.FromHex("FFFFFF"),
-                    SecondaryColor = Color.FromHex("795548"), SecondaryTextColor = Color.FromHex("FFFFFF")
-                },
-                new ColorTheme("yellow+1-cyan", "Yellow and Cyan")
-                {
-                    PrimaryColor = Color.FromHex("FDD835"), PrimaryTextColor = Color.FromHex("FFFFFF"),
-                    SecondaryColor = Color.FromHex("00BCD4"), SecondaryTextColor = Color.FromHex("FFFFFF")
+                    PrimaryTextColor = Color.FromHex("101010")
                 }
             };
         }

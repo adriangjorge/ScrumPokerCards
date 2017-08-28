@@ -4,10 +4,29 @@
              x:Class="ScrumPokerCards.Pages.ColorThemePage"
              Title="Color Themes">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding ColorThemeList}" SelectedItem="{Binding SelectedTheme}">
+        <ListView ItemsSource="{Binding ColorThemeList}" SelectedItem="{Binding SelectedTheme}" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding ThemeName}" TextColor="{DynamicResource TextColor}"/>
+                    <ViewCell>
+                        <Grid Margin="1" Padding="8" BackgroundColor="{DynamicResource ForegroundColor}" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Text="{Binding ThemeName}" TextColor="{DynamicResource TextColor}" VerticalOptions="Center"/>
+                            <Frame Grid.Column="1" BackgroundColor="{Binding PrimaryColor}" Padding="4" VerticalOptions="Center">
+                                <Label Text="Primary" TextColor="{Binding PrimaryTextColor}" FontSize="Micro" />
+                            </Frame>
+                            <Frame Grid.Column="2" BackgroundColor="{Binding SecondaryColor}" Padding="4" VerticalOptions="Center">
+                                <Label Text="Secondary" TextColor="{Binding SecondaryTextColor}" FontSize="Micro" />
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

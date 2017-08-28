@@ -1,6 +1,5 @@
 ﻿using FreshMvvm;
 using ScrumPokerCards.Helpers.ThemeManager;
-using ScrumPokerCards.Helpers.ThemeManager.ColorThemes;
 using System.Collections.Generic;
 
 namespace ScrumPokerCards.PageModels

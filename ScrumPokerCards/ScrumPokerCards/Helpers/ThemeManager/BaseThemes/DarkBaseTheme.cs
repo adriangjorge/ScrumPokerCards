@@ -4,11 +4,13 @@ namespace ScrumPokerCards.Helpers.ThemeManager.BaseThemes
 {
     public class DarkBaseTheme : BaseTheme
     {
-        public DarkBaseTheme() : base("dark", "Dark Theme")
+        public const string Key = "dark";
+
+        public DarkBaseTheme() : base(Key, "Dark Theme")
         {
-            BackgroundColor = Color.FromHex("263238");
-            ForegroundColor = Color.FromHex("37474F");
-            TextColor = Color.FromHex("ECEFF1");
+            BackgroundColor = ColorPalette.BlueGray_900;
+            ForegroundColor = ColorPalette.BlueGray_800;
+            TextColor = ColorPalette.BlueGray_50;
         }
     }
 }

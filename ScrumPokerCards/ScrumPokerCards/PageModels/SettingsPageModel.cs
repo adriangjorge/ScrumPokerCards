@@ -2,6 +2,7 @@
 using ScrumPokerCards.Helpers.ThemeManager;
 using ScrumPokerCards.Helpers.ThemeManager.BaseThemes;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -26,7 +27,7 @@ namespace ScrumPokerCards.PageModels
 
             InitializeCommands();
 
-            _isDarkBaseTheme = _themeManager.CurrentBaseTheme.ThemeKey.Equals(new DarkBaseTheme().ThemeKey);
+            _isDarkBaseTheme = _themeManager.CurrentBaseTheme.ThemeKey.Equals(DarkBaseTheme.Key);
         }
 
         /* Properties */

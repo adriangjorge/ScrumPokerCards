@@ -8,21 +8,21 @@
 
             <!-- Grids -->
             <Style TargetType="Grid" x:Key="SettingsGrid">
-                <Setter Property="Padding" Value="8" />
+                <Setter Property="Padding" Value="10" />
                 <Setter Property="RowSpacing" Value="10" />
             </Style>
 
             <!-- Labels -->
             <Style TargetType="Label" x:Key="TitleSettingsLabel">
                 <Setter Property="FontSize" Value="Large" />
-                <Setter Property="Margin" Value="0,6,0,4" />
+                <Setter Property="Margin" Value="0,8,0,4" />
                 <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
             <Style TargetType="Label" x:Key="ItemSettingsLabel">
                 <Setter Property="FontSize" Value="Default" />
                 <Setter Property="HorizontalOptions" Value="Start" />
-                <Setter Property="Margin" Value="14,0,0,0" />
+                <Setter Property="Margin" Value="8,0,0,0" />
                 <Setter Property="TextColor" Value="{DynamicResource TextColor}" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
@@ -50,8 +50,8 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.ColumnSpan="2" Text="Theme" Style="{DynamicResource TitleSettingsLabel}" />

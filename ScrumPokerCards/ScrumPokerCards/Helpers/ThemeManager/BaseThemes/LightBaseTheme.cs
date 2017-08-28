@@ -6,9 +6,9 @@ namespace ScrumPokerCards.Helpers.ThemeManager.BaseThemes
     {
         public LightBaseTheme() : base("light", "Light Theme")
         {
-            BackgroundColor = Color.FromHex("FAFAFA");
-            ForegroundColor = Color.FromHex("FFFFFF");
-            TextColor = Color.FromHex("212121");
+            BackgroundColor = ColorPalette.Gray_50;
+            ForegroundColor = ColorPalette.White;
+            TextColor = ColorPalette.Gray_900;
         }
     }
 }

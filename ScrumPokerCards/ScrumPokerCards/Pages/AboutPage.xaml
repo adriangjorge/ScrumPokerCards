@@ -6,8 +6,12 @@
     <ContentPage.Resources>
         <ResourceDictionary>
 
-            <!-- Labels -->
+            <!-- Images -->
+            <Style TargetType="Image" x:Key="SocialImage">
+                <Setter Property="HeightRequest" Value="50" />
+            </Style>
 
+            <!-- Labels -->
             <Style TargetType="Label">
                 <Setter Property="FontSize" Value="Small" />
             </Style>
@@ -18,6 +22,7 @@
         <ScrollView>
             <Grid Padding="10" RowSpacing="10">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
@@ -68,7 +73,24 @@
                     <Label Text="Please do not forget to rate the application." />
                     <Label Text="Enjoy!" />
                 </StackLayout>
-                <Button Grid.Row="2" Text="Close" Command="{Binding CloseCommand}" Margin="0"/>
+                <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start" Padding="10" Spacing="20">
+                    <Image Source="github.png" Style="{StaticResource SocialImage}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToGithubCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="linkedin.png" Style="{StaticResource SocialImage}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToLinkedinCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="twitter.png" Style="{StaticResource SocialImage}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GoToTwitterCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <Button Grid.Row="3" Text="Close" Command="{Binding CloseCommand}" Margin="0"/>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

@@ -10,11 +10,11 @@
 		<!--We will be using the toolbar so no need to show ActionBar-->
 		<item name="windowActionBar">false</item>
 		<!-- colorPrimary is used for the default action bar background --> <!-- FF5722 , 00AA8D -->
-		<item name="colorPrimary">#00AA8D</item>
+		<item name="colorPrimary">#607D8B</item>
 		<!-- colorPrimaryDark is used for the status bar -->
 		<item name="colorPrimaryDark">#212121</item>
 		<!-- colorAccent is used as the default value for colorControlActivated which is used to tint widgets -->
-		<item name="colorAccent">#FAFAFA</item>
+		<item name="colorAccent">#607D8B</item>
 		<!-- You can also set colorControlNormal, colorControlActivated, colorControlHighlight and colorSwitchThumbNormal. -->
 		<item name="windowActionModeOverlay">true</item>
 		<item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
