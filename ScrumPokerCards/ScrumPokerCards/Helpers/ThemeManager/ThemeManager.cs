@@ -121,10 +121,7 @@ namespace ScrumPokerCards.Helpers.ThemeManager
                 new ColorTheme("blue", "Blue", ColorPalette.Blue_A700, ColorPalette.Blue_A400),
                 new ColorTheme("blue-deeporange", "Blue and Deep Orange", ColorPalette.Blue, ColorPalette.DeepOrange),
                 new ColorTheme("blue-pink", "Blue and Pink", ColorPalette.Blue, ColorPalette.Pink),
-                new ColorTheme("brown-yellow+1", "Brown and Yellow", ColorPalette.Brown, ColorPalette.Yellow_600)
-                {
-                    SecondaryTextColor = Color.FromHex("101010")
-                },
+                new ColorTheme("brown-yellow+1", "Brown and Yellow", ColorPalette.Brown, ColorPalette.Yellow_600),
                 new ColorTheme("deeporange-blue", "Deep Orange and Blue", ColorPalette.DeepOrange, ColorPalette.Blue),
                 new ColorTheme("deeporange-teal", "Deep Orange and Teal", ColorPalette.DeepOrange, ColorPalette.Teal),
                 new ColorTheme("green-orange", "Green and Orange", ColorPalette.Green, ColorPalette.Orange),
@@ -134,14 +131,8 @@ namespace ScrumPokerCards.Helpers.ThemeManager
                 new ColorTheme("purple-pink", "Purple and Pink", ColorPalette.Purple, ColorPalette.Pink),
                 new ColorTheme("red", "Red", ColorPalette.Red, ColorPalette.Red),
                 new ColorTheme("teal-red", "Teal and Red", ColorPalette.Teal, ColorPalette.Red),
-                new ColorTheme("yellow+1-brown", "Yellow and Brown", ColorPalette.Yellow_600, ColorPalette.Brown)
-                {
-                    PrimaryTextColor = Color.FromHex("101010")
-                },
+                new ColorTheme("yellow+1-brown", "Yellow and Brown", ColorPalette.Yellow_600, ColorPalette.Brown),
                 new ColorTheme("yellow+1-cyan", "Yellow and Cyan", ColorPalette.Yellow_600, ColorPalette.Cyan)
-                {
-                    PrimaryTextColor = Color.FromHex("101010")
-                }
             };
         }
 

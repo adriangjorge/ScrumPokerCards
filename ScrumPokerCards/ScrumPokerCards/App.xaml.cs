@@ -1,7 +1,10 @@
 ﻿using FreshMvvm;
+using ScrumPokerCards.Helpers;
 using ScrumPokerCards.Helpers.ThemeManager;
 using ScrumPokerCards.PageModels;
 using ScrumPokerCards.Services;
+using ScrumPokerCards.Services.ChronometerService;
+using System;
 using Xamarin.Forms;
 
 namespace ScrumPokerCards
@@ -22,14 +25,14 @@ namespace ScrumPokerCards
 
         private void SetMainPage()
         {
-            var detailPage = FreshPageModelResolver.ResolvePageModel<CardsListPageModel>();
-            var detailPageNav = new FreshNavigationContainer(detailPage);
+            var cardsListPage = FreshPageModelResolver.ResolvePageModel<CardsListPageModel>();
+            var cardsListPageNav = new FreshNavigationContainer(cardsListPage);
 
-            var masterPage = FreshPageModelResolver.ResolvePageModel<MenuPageModel>(detailPage.GetModel().CoreMethods);
+            var masterPage = FreshPageModelResolver.ResolvePageModel<MenuPageModel>(cardsListPage.GetModel().CoreMethods);
 
             MainPage = new MasterDetailPage()
             {
-                Detail = detailPageNav,
+                Detail = cardsListPageNav,
                 Master = masterPage,
                 MasterBehavior = MasterBehavior.Popover
             };
@@ -40,9 +43,10 @@ namespace ScrumPokerCards
             // Def
             FreshIOC.Container.Register<ICardsService, CardsService>();
             FreshIOC.Container.Register<IThemeManager, ThemeManager>();
+            FreshIOC.Container.Register<IChronometerService, ChronometerService>();
 
             // Conf
             FreshIOC.Container.Resolve<IThemeManager>().Init();
-        }
+        } 
     }
 }

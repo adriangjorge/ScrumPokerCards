@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScrumPokerCards.Pages.ChronometerPage"
+             Title="Chronometer">
+    <ContentPage.Content>
+        <Grid Padding="8" RowSpacing="8" ColumnSpacing="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding CurrentTime}"
+                   VerticalOptions="Center" HorizontalOptions="Center" FontSize="80" />
+            <Button Grid.Row="1" Grid.Column="0" Text="Start" Style="{DynamicResource DefaultButton}"
+                    Command="{Binding StartCommand}" IsEnabled="{Binding EnabledStart}" />
+            <Button Grid.Row="1" Grid.Column="1" Text="Pause" Style="{DynamicResource DefaultButton}"
+                    Command="{Binding PauseCommand}" IsEnabled="{Binding EnabledPause}" />
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Reset" Command="{Binding ResetCommand}" IsEnabled="{Binding EnabledReset}"
+                    Style="{DynamicResource BasicButton}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

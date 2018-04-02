@@ -11,9 +11,20 @@
 
             <!-- Buttons -->
 
-            <Style TargetType="Button">
+            <Style TargetType="Button" x:Key="DefaultButton">
                 <Setter Property="BackgroundColor" Value="{DynamicResource SecondaryColor}" />
                 <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="BasicButton">
+                <Setter Property="BackgroundColor" Value="{DynamicResource ForegroundColor}" />
+                <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
+            </Style>
+
+            <!-- Images -->
+
+            <Style TargetType="Image">
+                
             </Style>
 
             <!-- Labels -->

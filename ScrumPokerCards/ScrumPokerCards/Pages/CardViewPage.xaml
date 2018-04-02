@@ -5,7 +5,11 @@
              Title="{Binding Card.Title}">
     <ContentPage.Content>
         <Frame Padding="0" Margin="10" VerticalOptions="Center" HorizontalOptions="Center">
-            <Image Source="{Binding Card.Image}" />
+            <Image>
+                <Image.Source>
+                    <FileImageSource File="{Binding Card.Image}" />
+                </Image.Source>
+            </Image>
         </Frame>
     </ContentPage.Content>
 </ContentPage>

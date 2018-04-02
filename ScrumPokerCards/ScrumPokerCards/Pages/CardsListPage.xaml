@@ -4,24 +4,27 @@
              x:Class="ScrumPokerCards.Pages.CardsListPage"
              Title="Scrum Poker Cards">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Cards}" SelectedItem="{Binding SelectedCard, Mode=TwoWay}" RowHeight="70" SeparatorVisibility="None" >
+        <ListView ItemsSource="{Binding Cards}" SelectedItem="{Binding SelectedCard, Mode=TwoWay}" RowHeight="70"  SeparatorVisibility="None" CachingStrategy="RecycleElement" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Margin="1" Padding="12" ColumnSpacing="14" BackgroundColor="{DynamicResource ForegroundColor}" >
+                        <Grid Margin="1" Padding="12" ColumnSpacing="14" RowSpacing="1" BackgroundColor="{DynamicResource ForegroundColor}" >
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <Image Grid.Column="0" Source="{Binding Thumbnail}"/>
-                            <StackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
-                                <Label Text="{Binding Title}" TextColor="{DynamicResource PrimaryColor}" VerticalOptions="End" FontSize="Medium"/>
-                                <Label Text="{Binding Detail}" VerticalOptions="Start" FontSize="Small"/>
-                            </StackLayout>
+                            <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                                <Image.Source>
+                                    <FileImageSource File="{Binding Thumbnail}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Title}" TextColor="{DynamicResource PrimaryColor}" VerticalOptions="End" FontSize="Medium"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Detail}" VerticalOptions="Start" FontSize="Small"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

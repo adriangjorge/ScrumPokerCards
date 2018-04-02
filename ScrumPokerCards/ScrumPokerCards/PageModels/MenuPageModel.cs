@@ -11,8 +11,9 @@ namespace ScrumPokerCards.PageModels
 
         private IPageModelCoreMethods _coreMethods;
 
-        private ICommand _gotoAboutCommand;
-        private ICommand _gotoSettingsCommand;
+        private ICommand _goToAboutCommand;
+        private ICommand _goToSettingsCommand;
+        private ICommand _goToChronometerCommand;
 
         /* Constructors */
 
@@ -23,14 +24,19 @@ namespace ScrumPokerCards.PageModels
 
         /* Properties */
         
-        public ICommand GotoAboutCommand
+        public ICommand GoToAboutCommand
         {
-            get { return _gotoAboutCommand; }
+            get { return _goToAboutCommand; }
         }
         
-        public ICommand GotoSettingsCommand
+        public ICommand GoToSettingsCommand
         {
-            get { return _gotoSettingsCommand; }
+            get { return _goToSettingsCommand; }
+        }
+
+        public ICommand GoToChronometerCommand
+        {
+            get { return _goToChronometerCommand; }
         }
 
         /* Overriden methods */
@@ -45,20 +51,27 @@ namespace ScrumPokerCards.PageModels
 
         private void InitializeCommands()
         {
-            _gotoAboutCommand = new Command(async () => await GotoAboutExecute());
-            _gotoSettingsCommand = new Command(async () => await GotoSettingsExecute());
+            _goToAboutCommand = new Command(async () => await GoToAboutExecute());
+            _goToSettingsCommand = new Command(async () => await GoToSettingsExecute());
+            _goToChronometerCommand = new Command(async () => await GoToChronometerExecute());
         }
 
-        private async Task GotoAboutExecute()
+        private async Task GoToAboutExecute()
         {
             HiddenMenu();
             await _coreMethods.PushPageModel<AboutPageModel>(null, true);
         }
 
-        private async Task GotoSettingsExecute()
+        private async Task GoToSettingsExecute()
         {
             HiddenMenu();
             await _coreMethods.PushPageModel<SettingsPageModel>(null);
+        }
+
+        private async Task GoToChronometerExecute()
+        {
+            HiddenMenu();
+            await _coreMethods.PushPageModel<ChronometerPageModel>(null);
         }
 
         private void HiddenMenu()
